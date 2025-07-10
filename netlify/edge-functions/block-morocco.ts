@@ -1,7 +1,6 @@
 export default async (request: Request, context: any) => {
   try {
     const country = context.geo?.country?.toUpperCase();
-
     if (country === "MA") {
       return new Response(
         "Access Denied: This site is not available in Morocco.",
@@ -13,14 +12,11 @@ export default async (request: Request, context: any) => {
         }
       );
     }
-
     return context.next();
-  } catch (err) {
+  } catch (error) {
+    // Log error if possible (Netlify logs)
     return new Response("Internal Server Error in Edge Function", {
       status: 500,
-      headers: {
-        "Content-Type": "text/plain",
-      },
     });
   }
 };
