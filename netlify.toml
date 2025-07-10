@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "/blocked.html"
-  status = 403
-  conditions = { Country = ["MA"] }
