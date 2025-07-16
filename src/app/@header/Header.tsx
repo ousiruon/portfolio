@@ -203,7 +203,8 @@ const Header = () => {
             </div>
           </div>
           {isOpen && (
-            <div className="fixed top-0 left-0 w-full h-full backdrop-blur-xs blur-xs bg-white/3 z-40"></div>
+            <div                 onClick={() => dispatch(setOpen())}
+            className="fixed top-0 left-0 w-full h-full backdrop-blur-xs blur-xs bg-white/3 z-40"></div>
           )}
           <motion.nav
             initial={{ x: "100%" }}
@@ -251,6 +252,9 @@ const Header = () => {
                       )}
                       <a
                         href={single.path}
+                        onClick={() => {
+                          dispatch(setOpen())
+                        }}
                         className={`text-decoration-none transition-colors ease-in duration-300 ${
                           isModern
                             ? "hover:text-terniary-modern"
