@@ -35,7 +35,7 @@ const Header = () => {
       important: boolean;
     }[]
   >([]);
-  const [hoverResume, setHoverResume] = useState(false);
+  // const [hoverResume, setHoverResume] = useState(false);
   useEffect(() => {
     if (isEn) {
       setHeaderContent(menuContent.en);
@@ -156,7 +156,7 @@ const Header = () => {
                       </a>
                     </>
                   )}
-                  {single.name === "Résumé" && (
+                  {/*single.name === "Résumé" && (
                     <motion.a
                       target="_blank"
                       rel="noopener noreferrer"
@@ -187,7 +187,7 @@ const Header = () => {
                         </>
                       )}
                     </motion.a>
-                  )}
+                  )*/}
                 </li>
               ))}
             </ul>
@@ -203,8 +203,10 @@ const Header = () => {
             </div>
           </div>
           {isOpen && (
-            <div                 onClick={() => dispatch(setOpen())}
-            className="fixed top-0 left-0 w-full h-full backdrop-blur-xs blur-xs bg-white/3 z-40"></div>
+            <div
+              onClick={() => dispatch(setOpen())}
+              className="fixed top-0 left-0 w-full h-full backdrop-blur-xs blur-xs bg-white/3 z-40"
+            ></div>
           )}
           <motion.nav
             initial={{ x: "100%" }}
@@ -253,7 +255,7 @@ const Header = () => {
                       <a
                         href={single.path}
                         onClick={() => {
-                          dispatch(setOpen())
+                          dispatch(setOpen());
                         }}
                         className={`text-decoration-none transition-colors ease-in duration-300 ${
                           isModern
@@ -265,7 +267,7 @@ const Header = () => {
                       </a>
                     </>
                   )}
-                  {single.name === "Résumé" && (
+                  {/*single.name === "Résumé" && (
                     <motion.a
                       href={single.path}
                       target="_blank"
@@ -287,7 +289,7 @@ const Header = () => {
                         </>
                       )}
                     </motion.a>
-                  )}
+                  )*/}
                 </li>
               ))}
             </ul>
